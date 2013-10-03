@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone/lib/backbone
+//= require backbone/lib/backbone.wreqr
+//= require backbone/lib/backbone.babysitter
 //= require backbone.marionette
 // require backbone_rails_sync
 // require backbone_datalink
@@ -22,4 +24,4 @@
 //= require hamlcoffee
 //= require tasks
 
-//$(document).foundation();
+$(document).foundation();
