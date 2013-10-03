@@ -3,5 +3,6 @@ class TaskManager.Routers.TasksRouter extends Backbone.Marionette.AppRouter
     "": "index"
 
   index: ->
-    console.log 'index'
+    console.log 'index',app
+    app.list.show(new TaskManager.Views.Tasks.IndexView collection: app.tasks)
 
