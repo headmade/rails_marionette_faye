@@ -1,0 +1,10 @@
+%h1 Articles
+
+%table
+  %th title
+  %th content
+  %th
+  %th
+  %th
+
+%a{:href=>"/#new"} New
