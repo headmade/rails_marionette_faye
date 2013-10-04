@@ -1,10 +1,11 @@
 %h1 Articles
 
 %table
-  %th title
-  %th content
-  %th
-  %th
-  %th
+  %thead
+    %th Name
+    %th Status
+    %th
+    %th
+  %tbody
 
 %a#new New
