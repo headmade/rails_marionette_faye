@@ -9,4 +9,6 @@ class TaskManager.Views.Tasks.IndexView extends Backbone.Marionette.CompositeVie
   events:
     'click #new':'new'
   new: ->
-    app.form.show(new TaskManager.Views.Tasks.FormTask())
+    model = new TaskManager.Models.Task({})
+    app.tasks.add(model)
+    app.form.show(new TaskManager.Views.Tasks.FormTask({model:model}))

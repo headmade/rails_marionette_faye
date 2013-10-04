@@ -55,3 +55,6 @@ gem 'zurb-foundation', '~> 4.0.0'
 # Your other asset gems (sass-rails, coffee-rails, etc)
 gem 'rails-backbone'
 gem 'marionette-rails'
+
+gem 'faye', github: "faye/faye"
+gem 'puma'

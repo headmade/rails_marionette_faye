@@ -43,7 +43,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update(task_params)
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
-        format.json { render action: 'show', status: :created, location: @task }
+        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @task.errors, status: :unprocessable_entity }
