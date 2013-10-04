@@ -1,6 +1,6 @@
 %h1 Articles
 
-%table
+%table{width: '100%'}
   %thead
     %th Name
     %th Status
@@ -8,4 +8,4 @@
     %th
   %tbody
 
-%a#new New
+%a{:href=>'#',:class=>'button medium round success',:id=>'new'} New

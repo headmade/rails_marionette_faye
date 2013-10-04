@@ -3,7 +3,8 @@ class TaskManager.Applications.TaskApplication extends Backbone.Marionette.Appli
   onInitializeBefore: (options) ->
     @addRegions
       'list': '#list'
-      'task': '#task'
+      'task': '#edit'
+      'form': '#form'
 
   onInitializeAfter: (options) =>
     @tasks = new TaskManager.Collections.TasksCollection

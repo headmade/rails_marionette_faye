@@ -1,4 +1,6 @@
-%td = name
-%td = status
-%td Edit
-%td Delete
+%td= @name
+%td= @status
+%td
+  %a{href:'#',class:'button small success', id:'edit'}Edit
+%td
+  %a{href:'#',class:'button small alert',id:'delete'}Delete

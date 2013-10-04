@@ -23,5 +23,23 @@
 //= require foundation
 //= require hamlcoffee
 //= require tasks
+//= require backbone/lib/rivets
 
 $(document).foundation();
+
+rivets.configure({
+    adapter: {
+        subscribe: function(obj, keypath, callback) {
+            obj.on("change:" + keypath, callback)
+        },
+        unsubscribe: function(obj, keypath, callback) {
+            obj.off("change:" + keypath, callback)
+        },
+        read: function(obj, keypath) {
+            return obj.get(keypath)
+        },
+        publish: function(obj, keypath, value) {
+            obj.set(keypath, value)
+        }
+    }
+})
