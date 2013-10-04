@@ -6,13 +6,13 @@ class TaskManager.Applications.TaskApplication extends Backbone.Marionette.Appli
       'task': '#task'
 
   onInitializeAfter: (options) =>
+    @tasks = new TaskManager.Collections.TasksCollection
+    @tasks.fetch()
     @router = new TaskManager.Routers.TasksRouter
     if Backbone.history
       Backbone.history.start()
 
   onStart: (options) ->
-    @tasks = new TaskManager.Collections.TasksCollection
-    @tasks.fetch()
 #    client.subscribe '/visit', (msg) =>
 #      console.log msg
 #      this.collections.visits.fetch()

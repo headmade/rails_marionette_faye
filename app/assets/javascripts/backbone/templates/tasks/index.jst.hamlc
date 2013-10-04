@@ -7,4 +7,4 @@
   %th
   %th
 
-%a{:href=>"/#new"} New
+%a#new New
