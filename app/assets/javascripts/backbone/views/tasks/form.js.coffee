@@ -4,7 +4,6 @@ class TaskManager.Views.Tasks.FormTask extends Backbone.Marionette.ItemView
   template:JST["backbone/templates/tasks/form"]
   onShow: ->
     $('#modal').show()
-    console.log @model
     rivets.bind(@$el,{model:@model})
   events:
     'click #ok':'ok'

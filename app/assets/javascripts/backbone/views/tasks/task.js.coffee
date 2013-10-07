@@ -3,15 +3,15 @@ class TaskManager.Views.Tasks.Task extends Backbone.Marionette.ItemView
   tagName:'tr'
   template:JST["backbone/templates/tasks/task"]
   initialize: ->
-    @model.on('change', () =>
-      console.log 'change:model'
+    @model.on('sync', () =>
+      console.log 'model:sync'
       @render()
     )
   events:
     'click #delete':'deleteTask'
     'click #edit':'editTask'
   onRender: ->
-    console.log 'render:model'
+    console.log 'render:view'
   deleteTask: ->
     console.log 'ok'
     @model.destroy(
