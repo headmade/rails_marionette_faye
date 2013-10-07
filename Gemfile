@@ -56,5 +56,5 @@ gem 'zurb-foundation', '~> 4.0.0'
 gem 'rails-backbone'
 gem 'marionette-rails'
 
-gem 'faye', github: "faye/faye"
+gem 'faye'
 gem 'puma'
