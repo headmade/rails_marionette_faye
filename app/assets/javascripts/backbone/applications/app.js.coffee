@@ -10,9 +10,9 @@ class TaskManager.Applications.TaskApplication extends Backbone.Marionette.Appli
     @tasks = new TaskManager.Collections.TasksCollection
     @tasks.fetch()
     @router = new TaskManager.Routers.TasksRouter
-    @client = new Faye.Client 'http://localhost:9292/faye'
+    @client = new Faye.Client window.faye_server
     @client.subscribe '/task_change', (id) =>
-      model = @tasks.get(id)
+      model = @tasks.get id
       if !model
         @tasks.add new TaskManager.Models.Task id:id
         model = @tasks.get(id)
