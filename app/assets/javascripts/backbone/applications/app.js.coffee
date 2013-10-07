@@ -10,6 +10,10 @@ class TaskManager.Applications.TaskApplication extends Backbone.Marionette.Appli
     @tasks = new TaskManager.Collections.TasksCollection
     @tasks.fetch()
     @router = new TaskManager.Routers.TasksRouter
+    @client = new Faye.Client 'http://localhost:9292/faye'
+    @client.subscribe '/taskchange', (id) =>
+      model = @collection.get id
+      model.fetch()
     if Backbone.history
       Backbone.history.start()
 

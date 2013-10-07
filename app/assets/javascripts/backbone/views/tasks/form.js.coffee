@@ -9,7 +9,10 @@ class TaskManager.Views.Tasks.FormTask extends Backbone.Marionette.ItemView
     'click #ok':'ok'
     'click #delete':'deleteTask'
   ok: ->
-    @model.save()
+    @model.save({
+      success: (model) ->
+        app.client.publish('/taskchange', model.id)
+    })
 #    app.form.close()
     $('#modal').foundation('reveal', 'close');
   deleteTask: ->
