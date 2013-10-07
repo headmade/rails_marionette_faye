@@ -3,7 +3,6 @@
 %table{width: '100%'}
   %thead
     %th Name
-    %th Status
     %th
     %th
   %tbody

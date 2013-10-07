@@ -10,12 +10,13 @@ class TaskManager.Views.Tasks.Task extends Backbone.Marionette.ItemView
   events:
     'click #delete':'deleteTask'
     'click #edit':'editTask'
+    'click #lock':'lockTask'
   onRender: ->
     console.log 'render:view'
   deleteTask: ->
     console.log 'ok'
     @model.destroy(
-      success: (model, response) ->
+      success: (model) ->
         app.client.publish('/task_delete', model.id)
         console.log model
       error: (model, response) ->
@@ -23,4 +24,9 @@ class TaskManager.Views.Tasks.Task extends Backbone.Marionette.ItemView
     )
   editTask: ->
     app.form.show new TaskManager.Views.Tasks.FormTask({model:@model})
-    $('#modal').foundation('reveal', 'open')
+    @model.save({status: 1}, {
+      success: (model) ->
+        app.client.publish('/task_change', model.id)
+        $('#modal').foundation('reveal', 'open')
+    })
+  lockTask: ->
