@@ -10,7 +10,9 @@ class TaskManager.Views.Tasks.FormTask extends Backbone.Marionette.ItemView
     'click #delete':'deleteTask'
   ok: ->
     @model.save()
-    app.form.close()
+#    app.form.close()
+    $('#modal').foundation('reveal', 'close');
   deleteTask: ->
     @model.destroy()
-    app.form.close()
+#    app.form.close()
+    $('#modal').foundation('reveal', 'close');

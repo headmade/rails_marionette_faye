@@ -16,3 +16,4 @@ class TaskManager.Views.Tasks.IndexView extends Backbone.Marionette.CompositeVie
     model = new TaskManager.Models.Task({})
     app.tasks.add(model)
     app.form.show(new TaskManager.Views.Tasks.FormTask({model:model}))
+    $('#modal').foundation('reveal', 'open')

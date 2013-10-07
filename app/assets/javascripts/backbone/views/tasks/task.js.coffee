@@ -22,3 +22,4 @@ class TaskManager.Views.Tasks.Task extends Backbone.Marionette.ItemView
     )
   editTask: ->
     app.form.show new TaskManager.Views.Tasks.FormTask({model:@model})
+    $('#modal').foundation('reveal', 'open')

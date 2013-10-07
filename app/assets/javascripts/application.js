@@ -42,7 +42,7 @@ rivets.configure({
             obj.set(keypath, value)
         }
     }
-})
+});
 rivets.formatters.intBool = {
     read: function(value) {
         if(value == 1) {
@@ -60,4 +60,4 @@ rivets.formatters.intBool = {
             return 0
         }
     }
-}
+};
