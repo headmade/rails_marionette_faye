@@ -16,6 +16,7 @@ class TaskManager.Views.Tasks.Task extends Backbone.Marionette.ItemView
     console.log 'ok'
     @model.destroy(
       success: (model, response) ->
+        app.client.publish('/task_delete', model.id)
         console.log model
       error: (model, response) ->
         console.log response

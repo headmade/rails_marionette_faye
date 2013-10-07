@@ -11,9 +11,16 @@ class TaskManager.Applications.TaskApplication extends Backbone.Marionette.Appli
     @tasks.fetch()
     @router = new TaskManager.Routers.TasksRouter
     @client = new Faye.Client 'http://localhost:9292/faye'
-    @client.subscribe '/taskchange', (id) =>
-      model = @tasks.get id
+    @client.subscribe '/task_change', (id) =>
+      model = @tasks.get(id)
+      if !model
+        @tasks.add new TaskManager.Models.Task id:id
+        model = @tasks.get(id)
       model.fetch()
+    @client.subscribe '/task_delete', (id) =>
+      model = @tasks.get(id)
+      if !!model
+        model.destroy()
     if Backbone.history
       Backbone.history.start()
 

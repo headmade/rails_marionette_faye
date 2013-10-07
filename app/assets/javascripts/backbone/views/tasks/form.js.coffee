@@ -11,7 +11,7 @@ class TaskManager.Views.Tasks.FormTask extends Backbone.Marionette.ItemView
   ok: ->
     @model.save({}, {
       success: (model) ->
-        app.client.publish('/taskchange', model.id)
+        app.client.publish('/task_change', model.id)
     })
 #    app.form.close()
     $('#modal').foundation('reveal', 'close');
