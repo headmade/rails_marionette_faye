@@ -43,3 +43,21 @@ rivets.configure({
         }
     }
 })
+rivets.formatters.intBool = {
+    read: function(value) {
+        if(value == 1) {
+            return true
+        }
+        else if(value == 0) {
+            return false
+        }
+    },
+    publish: function(value) {
+        if(value){
+            return 1
+        }
+        else {
+            return 0
+        }
+    }
+}

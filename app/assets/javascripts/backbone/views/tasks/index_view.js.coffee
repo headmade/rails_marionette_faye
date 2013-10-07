@@ -5,7 +5,11 @@ class TaskManager.Views.Tasks.IndexView extends Backbone.Marionette.CompositeVie
 
   initialize: -> 
     @itemView=TaskManager.Views.Tasks.Task
-
+    @collection.on('change', () ->
+      console.log 'change:collection'
+    )
+  onRender: ->
+    console.log 'render:collection'
   events:
     'click #new':'new'
   new: ->

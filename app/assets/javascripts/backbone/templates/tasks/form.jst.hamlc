@@ -7,7 +7,7 @@
   %div.row
     %div.large-4.columns
       %lable Done
-      %input{type:'checkbox', 'data-checked'=>'model.status'}
+      %input{type:'checkbox', 'data-checked'=>'model.status | intBool'}
   %br
   %br
   %div.row
