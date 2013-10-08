@@ -1,19 +1,18 @@
-%fieldset
-  %legend Create Task
-  %div.row
-    %div.large-4.columns
-      %lable Name
-      %input{id:'taskName',type:'text', 'data-value'=> 'model.name'}
+%h3 Create Task
+
+%div.row
+  %div.large-4.columns
+    %lable Name
+    %input{autofocus:'autofocus', id:'taskName',type:'text', 'data-value'=> 'model.name'}
   -#%div.row
   -#  %div.large-4.columns
   -#    %lable Done
   -#    %input{type:'checkbox', 'data-checked'=>'model.status | intBool'}
   %br
   %br
-  %div.row
-    %div.large-4.large-offset-1.columns
-      %a{href:'#',class:'button medium round success', id:'ok'} Ok
-    %div.large-4.large-offset-2.columns
-      %a{href:'#',class:'button medium round alert', id:'delete'} Delete
-  %a{id:'close',class:'close-reveal-modal'} &#215;
-
+%div.row
+  %div.large-4.large-offset-1.columns
+    %a{href:'#',class:'button medium round success', id:'ok'} Ok
+  %div.large-4.large-offset-2.columns
+    %a{href:'#',class:'button medium round alert', id:'delete'} Delete
+%a{id:'close',class:'close-reveal-modal'} &#215;

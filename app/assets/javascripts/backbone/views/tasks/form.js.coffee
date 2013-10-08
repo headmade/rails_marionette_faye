@@ -32,6 +32,7 @@ class TaskManager.Views.Tasks.FormTask extends Backbone.Marionette.ItemView
   onShow: ->
     rivets.bind(@$el,{model:@model})
     @lock()
+    @$el.find('#taskName').focus()
 
   lock: ->
     if !@model.isNew()
