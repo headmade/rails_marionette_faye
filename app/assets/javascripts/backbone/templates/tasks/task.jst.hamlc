@@ -1,8 +1,10 @@
 %td= @name
-%td
-  - if @status == 0
+- if @status == 0
+  %td
     %a{href:'#',class:'button small success', id:'edit'}Edit
-  - else
+  %td
+    %a{href:'#',class:'button small alert',id:'delete'}Delete
+- else
+  %td
     %a{href:'#',class:'button small', id:'lock'}lock
-%td
-  %a{href:'#',class:'button small alert',id:'delete'}Delete
+  %td

@@ -24,9 +24,4 @@ class TaskManager.Views.Tasks.Task extends Backbone.Marionette.ItemView
     )
   editTask: ->
     app.form.show new TaskManager.Views.Tasks.FormTask({model:@model})
-    @model.save({status: 1}, {
-      success: (model) ->
-        app.client.publish('/task_change', model.id)
-        $('#modal').foundation('reveal', 'open')
-    })
-  lockTask: ->
+    $('#modal').foundation('reveal', 'open')
