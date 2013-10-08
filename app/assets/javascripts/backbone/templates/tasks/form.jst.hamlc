@@ -3,7 +3,7 @@
   %div.row
     %div.large-4.columns
       %lable Name
-      %input{type:'text', 'data-value'=> 'model.name'}
+      %input{id:'taskName',type:'text', 'data-value'=> 'model.name'}
   -#%div.row
   -#  %div.large-4.columns
   -#    %lable Done

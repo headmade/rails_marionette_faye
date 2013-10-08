@@ -6,6 +6,7 @@ class TaskManager.Views.Tasks.FormTask extends Backbone.Marionette.ItemView
     'click #ok':'ok'
     'click #delete':'deleteTask'
     'click #close':'closeForm'
+    'keypress #taskName':'pressEnter'
 
   ok: ->
     @unlock()
@@ -22,6 +23,11 @@ class TaskManager.Views.Tasks.FormTask extends Backbone.Marionette.ItemView
 
   closeForm: ->
     @unlock()
+
+  pressEnter: (e) ->
+    if e.keyCode is 13
+      @$el.find('#taskName').change()
+      @ok()
 
   onShow: ->
     rivets.bind(@$el,{model:@model})
