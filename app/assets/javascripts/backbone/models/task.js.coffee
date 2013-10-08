@@ -1,5 +1,5 @@
 class TaskManager.Models.Task extends Backbone.Model
-#	paramRoot: 'task'
+	paramRoot: 'task'
 
   defaults:
     name: ''
